@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<style type="text/css">
+body{
+	margin: 20px auto;
+	padding: 0;
+	width: 580px;
+	font-size: 0;
+}
+	.wrapper{
+		width: 204px;
+		height: 200px;
+		border: 2px solid yellow;
+		overflow: hidden;
+	}
+	.images img{
+		border: solid 1px #ccc;
+		width: 50px;
+		height: 50px;
+		/*padding: 4px;*/
+	}
+</style>
+	<!-- <div>
+		<div class="main">
+			
+		</div>
+		<div class="alls">
+			<img src="1.jpg" alt="nature">
+			<img src="2.jpg" alt="nature">
+			<img src="3.jpg" alt="nature">
+			<img src="4.jpg" alt="nature">
+		</div>
+	</div>
+
+	<script>
+
+			var parent = document.querySelector('.main'); //  взяли большой див
+			var	child = document.querySelector('.alls'), //взяли див с изображениями
+					oneChild = child.firstElementChild; // взяли первый элемент
+					parent.insertAdjacentHTML('afterbegin','img src="'+oneChild.src+'">');
+					child.addEventListener('click', newImg);
+		function newImg(e){
+			var clickEvent = e.target,
+				attr = img.target.getAttribute("src");
+
+				if(attr){
+		parent.firstElementChild.src=attr;
+				}
+}
+
+	</script> -->
+
+	<div class="wrapper">
+</div>
+<div class="images">
+<img src="1.jpg" alt="">
+<img src="2.jpg" alt="">
+<img src="3.jpg" alt="">
+<img src="4.jpg" alt="">
+</div>
+<script>
+
+var wrapper = document.querySelector('.wrapper')
+var list = document.querySelector('.images')
+var firstItem = list.firstElementChild
+wrapper.insertAdjacentHTML('afterbegin', '<img src="'+firstItem.src+'">');
+list.addEventListener('click', getImage)
+function getImage(event) {
+var target = event.target
+var attr = target.getAttribute('src')
+if (attr) {
+wrapper.firstElementChild.src = attr;
+}
+}
+</script>
+</body>
+</html>
